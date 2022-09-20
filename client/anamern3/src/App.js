@@ -49,7 +49,9 @@ class App extends Component {
     const thought = prompt('Enter your thought: ');
     if (!thought) return;
     axios
-      .post('http://localhost:5001/api/thoughts/create', { thought })
+      .post('http://localhost:5001/api/thoughts/create', {
+        thought,
+      })
       .then((res) =>
         this.setState({
           thoughts: [...this.state.thoughts, res.data.newThought],
