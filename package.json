@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "cd client/anamern3 && npm && npm run build && cd ../.. && node server",
+    "start": "cd client/anamern3 && npm install && npm run build && cd ../.. && node server",
     "dev": "node server"
   },
   "keywords": [],
