@@ -12,7 +12,7 @@ class App extends Component {
 
   componentDidMount() {
     axios
-      .get('http://localhost:5001/api/thoughts/')
+      .get('https://anamern1.mongo.cosmos.azure.com:443/api/thoughts/')
       .then((res) => this.setState({ thoughts: res.data }))
       .catch(alert);
   }
@@ -49,7 +49,7 @@ class App extends Component {
     const thought = prompt('Enter your thought: ');
     if (!thought) return;
     axios
-      .post('http://localhost:5001/api/thoughts/create', {
+      .post('https://anamern1.mongo.cosmos.azure.com:443/api/thoughts/create', {
         thought,
       })
       .then((res) =>
@@ -66,7 +66,7 @@ class App extends Component {
     const doDelete = window.confirm('Delete all Thoughts?');
     if (!doDelete) return;
     axios
-      .delete('http://localhost:5001/api/thoughts/')
+      .delete('https://anamern1.mongo.cosmos.azure.com:443/api/thoughts/')
       .then((res) => this.setState({ thoughts: [] }))
       .catch((err) =>
         alert(`Failed to delete all thoughts\n${JSON.stringify(err)}`)
@@ -77,10 +77,10 @@ class App extends Component {
     const doSeed = window.confirm('Do you want to seed random data?');
     if (!doSeed) return;
     axios
-      .post('http://localhost:5001/api/thoughts/seed', {})
+      .post('https://anamern1.mongo.cosmos.azure.com:443/api/thoughts/seed', {})
       .then(() => {
         axios
-          .get('http://localhost:5001/api/thoughts/')
+          .get('https://anamern1.mongo.cosmos.azure.com:443/api/thoughts/')
           .then((res) => this.setState({ thoughts: res.data }))
           .catch(alert);
       })
