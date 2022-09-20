@@ -1,9 +1,10 @@
 const mongoose = require('mongoose');
+require('dotenv').config();
 
 const { DB_CONN, DB_USER, DB_PW } = process.env;
 
 mongoose
-  .connect(DB_CONN, {
+  .connect(`${process.env.DB_CONN}`, {
     auth: { username: DB_USER, password: DB_PW },
     useNewUrlParser: true,
     useUnifiedTopology: true,
