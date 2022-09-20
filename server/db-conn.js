@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+require('dotenv').config();
 
 const { DB_CONN, DB_USER, DB_PW } = process.env;
 
@@ -8,6 +9,8 @@ mongoose
     useNewUrlParser: true,
   })
   .then(() =>
-    console.log('Succesfully connected to the DB through the power of magic...')
+    console.log(
+      'Successfully connected to the DB through the power of magic...'
+    )
   )
   .catch(console.error);
