@@ -40,5 +40,5 @@ app.get('/*', (req, res) => {
   res.sendFile('index.html', { root: __dirname + '/client/anamern3/build/' });
 });
 
-const { PORT } = process.env.PORT || 5001;
+const PORT = process.env.PORT || 5001;
 app.listen(PORT, () => console.log(`Wizardry happening on port ${PORT}`));
