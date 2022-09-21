@@ -7,6 +7,7 @@ mongoose
   .connect(DB_CONN, {
     auth: { username: DB_USER, password: DB_PW },
     useNewUrlParser: true,
+    useUnifiedTopology: true,
   })
   .then(() =>
     console.log(
